@@ -1,6 +1,12 @@
 # Impact of Bias in Face Recognition
 
-<img width="500" height="auto" alt="Component 7(1)" style="margin: auto" src="https://github.com/user-attachments/assets/c142b2f8-b2e8-46a2-8b55-c1a0956219ca" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img width="490" height="auto" alt="Component 7(1)" style="margin: auto;" src="https://github.com/user-attachments/assets/c142b2f8-b2e8-46a2-8b55-c1a0956219ca" /> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<img width="405" height="auto" alt="Screenshot 2025-09-15 at 17 16 17 1(1)" style="margin: auto;" src="https://github.com/user-attachments/assets/04c66246-d11c-4fab-a068-35c0cd7e68da" />
+
+
+> Credit: Combined images from some of currently used facial recognition toolkits [CVLFace](https://github.com/mk-minchul/CVLface) and [DeepFace](https://github.com/serengil/deepface).
 
 ### Contributors:
 - Aditya Khadkikar, M.Sc. Data Science student, Uppsala University
