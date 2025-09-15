@@ -1,24 +1,24 @@
 # Impact of Bias in Face Recognition
 
-## Contributors:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img width="490" height="auto" alt="Component 7(1)" style="margin: auto;" src="https://github.com/user-attachments/assets/c142b2f8-b2e8-46a2-8b55-c1a0956219ca" /> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<img width="405" height="auto" alt="Screenshot 2025-09-15 at 17 16 17 1(1)" style="margin: auto;" src="https://github.com/user-attachments/assets/04c66246-d11c-4fab-a068-35c0cd7e68da" />
+
+
+> Credit: Combined images from some of currently used facial recognition toolkits [CVLFace](https://github.com/mk-minchul/CVLface) and [DeepFace](https://github.com/serengil/deepface).
+
+### Contributors:
 - Aditya Khadkikar, M.Sc. Data Science student, Uppsala University
 - Mark Smithson Rivas, M.Sc. Data Science student, Uppsala University
 
-## Supervisor:
+### Supervisor:
 - Anders Hast, Professor in Department of Information Technology, Uppsala University
 
 <hr/>
 
 ## **Aim of Research** 
-- How does cosine similarity (**inter- and intra-**) vary with social markers/classes? (age, ethnicity, and gender)?
-
-Extended to a broader question:
-
-- How is the facial detection (D), alignment (A) and recognition (R) quality affected based on social markers (age, ethnicity, gender)
-
-(if time permits) 
-- What are representation translation methods between different DAR triplets
-- Which combinations aim to provide least bias for FR in diverse gender, age and ethnicity groups?
+How does cosine similarity (**inter- and intra-**) vary with social markers/classes? (age, ethnicity, and gender)? Extended to a broader question, how is the facial detection (D), alignment (A) and recognition (R) quality affected based on social markers (age, ethnicity, gender). If time permits, additional areas are exploring representation translation methods between different DAR triplets, and which combinations aim to provide least bias for FR in diverse gender, age and ethnicity groups.
 
 ## Important links
 - https://github.com/mk-minchul/CVLface
@@ -41,17 +41,21 @@ Extended to a broader question:
 
 - The above gained information can be used as a controlled variable in the experimentation process, otherwise reflect in your research why it could not fully be controlled / could be controlled. 
 
+<hr/>
+
 **Stage 1 of the Research Process:**
 - Inter-similarity and Intra-similarity (Bhattacharya coefficient - dot product between the curves)
-   - Complicated dataset: more overlap (thus faces of the same person are also confused to be photos of other people)
+   - Complicated dataset: more overlap (thus faces of the same person are also confused to be photos of other people). **Try to do this on the FairFace dataset.**
 
-**Try to do this on the FairFace dataset.**
+<hr/>
 
 **Stage 2 of the Research Process**:
 - Conduct the above inter- and intra-similarity investigation, now for comparing between multiple classes: 
    - Age, Ethnicity, and Gender
 - Observe the bias (can be done with the metrics previously provided, along with MAE, MAP and so on.)
 
-DO this for one computer-vision facial recognition library *first* (e.g. CVLFace library), **and compare with potentially other FR pipelines and how well they perform**. 
+<hr/>
+
+> Do Stage 2 for one computer-vision facial recognition library *first* (e.g. CVLFace library), **and compare with potentially other FR pipelines and how well they perform**. 
 - Collect **metrics**: Mean Absolute Error, Mean Average Precision, ... 
 - Do more trials!
