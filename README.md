@@ -1,5 +1,14 @@
 # Impact of Bias in Face Recognition
 
+## Contributors:
+- Aditya Khadkikar, M.Sc. Data Science student, Uppsala University
+- Mark Smithson Rivas, M.Sc. Data Science student, Uppsala University
+
+## Supervisor:
+- Anders Hast, Professor in Department of Information Technology, Uppsala University
+
+<hr/>
+
 ## **Aim of Research** 
 - How does cosine similarity (**inter- and intra-**) vary with social markers/classes? (age, ethnicity, and gender)?
 
