@@ -99,7 +99,7 @@ def bootstrap_CI(bd_s, B=1000):
   <img width="930" height="423" alt="Screenshot 2026-01-09 at 23 35 35 1" src="https://github.com/user-attachments/assets/1ceccfe9-ea03-495f-88d8-951d37981356" />
 </p>
 
-This is done in the `intra-inter-simil_bc-lfw.ipynb` notebook. 
+Above is an example graph. This is done in the `intra-inter-simil_bc-lfw.ipynb` notebook. 
 
 ## 6. Link BC value with performance of the FR backends
 - We provide a comparison of which detectors from `dlib, mtcnn, retinaface` had a greater BC value, when evaluated from the `Facenet512` embedding + verification model, and with the `cosine` distance. 
