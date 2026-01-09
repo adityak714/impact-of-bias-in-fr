@@ -37,25 +37,25 @@ There are 7 parts outlining the whole conducted process:
 
 > Credit: M. Luzardo, M. Karppa, J. Laaksonen, T. Jantunen, "Head pose estimation for sign language video," in J.-K. Kamarainen and M. Koskela (eds.), Image Analysis. Springer, Lecture Notes in Computer Science, Vol. 7944, pp. 349–360, 2013.
 
-These are stored in a CSV file `all-backends_per-image-headposes-lfw.csv`.
+These are stored in a CSV file `data/all-backends_per-image-headposes-lfw.csv`, and the code is present in `headposes_<..>_per_image-lfw.ipynb`.
 
 ## 2. Get Race and Gender Classifications
-- Using the same collection of detector backends we tried in the headpose estimation (`dlib, mtcnn, retinaface`), by utilizing the toolkit [DeepFace](https://github.com/serengil/deepface), we run methods to get predictions of the race and gender of the subject and their images. We store them in a CSV file `all-backends_per-image-labels-lfw.csv`.
+- Using the same collection of detector backends we tried in the headpose estimation (`dlib, mtcnn, retinaface`), by utilizing the toolkit [DeepFace](https://github.com/serengil/deepface), we run methods to get predictions of the race and gender of the subject and their images. We store them in a CSV file `data/all-backends_per-image-labels-lfw.csv`.
 
 ## 3. Observe Deviating Classifications from the Mode Gender and Mode Race
 - In getting the race and gender classifications for each image, we now group all of those images by person. The classifications will be stored as `{'classified_race_1': 20}` (the race was classified as `classified_race_1` (could be one or more from 'white', 'middle eastern', 'asian' and several others)), or `{'male': 18, 'female': 2}` (in a subject, e.g. 20 images of 'Tom Ridge'). 
 
-These are stored in a CSV file `all-backends_per-person-labels-lfw.csv`.
+These are stored in a CSV file `data/all-backends_per-person-labels-lfw.csv`.
 
 ## 4. Observe Representation with Low-Rank Approximation from Embedding w.r.t. `Facenet512`
 - The FR model chosen, and kept constant in the experimentation on the LFW dataset, is the `Facenet512`, from the several others offered on DeepFace. Each image was converted to its embedding form (a high-dimensional array `[]`), and later, the embeddings were grouped by individual. Then, using t-SNE as the method for approximation, the embeddings were converted to a lower 2-d dimension for plotting. This is done for visualization of which images might have deviated from the other images in their representation, by inspecting the outlying points from a cluster (if exists).
 
-This is done in the `embedding_per-image-lfw.ipynb` notebook.
+Combined code for stages 2, 3, 4 is done in the `labelling+embedding_per_image-lfw.ipynb` notebook. The detailed plot images are in `data/tsne-embeddings_per-person-plots.zip`, labelled by which image of the specific person.
+
+The raw Facenet512 embeddings for each person's images, and the approximated 2D t-SNE embeddings are stored in `tsne_embeddings_per_image-lfw.pickle`.
 
 ## 5. Inter- and Intra-Similarity Density Estimation (using Gaussian KDE) and Compute Bhattacharyya Coefficient
 - The use of the obtained embeddings is followed in getting an estimation of the model's inter and intra-similarity. Inter-similarity is the correct verification of 2 compared images of distinct subjects, and intra-similarity is the ability to verify 2 images of the same subject.
-
-This is done in the `intra-inter-simil+bc-lfw.ipynb` notebook. 
 
 - Verification is done with different defined distance methods, which can be `cosine, euclidean, euclidean_l2` and more. It is chosen for this investigation to use the `cosine` distance (provided as an argument in `find_distance()` in the submodule of DeepFace `deepface.modules.verification`). 
 
@@ -68,6 +68,8 @@ def BD_mc(p, q, n=100):
   q_pdf = q.pdf(points)
   return (np.sqrt(p_pdf * q_pdf)/p_pdf).mean()
 ```
+
+This is done in the `intra-inter-simil_bc-lfw.ipynb` notebook. 
 
 ## 6. Link BC value with performance of the FR backends
 - We provide a comparison of which detectors from `dlib, mtcnn, retinaface` had a greater BC value, when evaluated from the `Facenet512` embedding + verification model, and with the `cosine` distance. 
